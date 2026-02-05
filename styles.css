@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Georgia', serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f8f9f9;
+    background-color: #f8f5f0;
 }
 
 .container {
@@ -18,7 +18,33 @@ body {
     padding: 0 20px;
 }
 
-/* Header styles */
+h1, h2, h3 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #e74c3c;
+    margin: 10px auto;
+}
+
+/* Header */
 header {
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -28,18 +54,11 @@ header {
     z-index: 1000;
 }
 
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
+header div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-h1 {
-    color: #2e7d32;
-    font-size: 1.8rem;
+    padding: 1rem 0;
 }
 
 nav ul {
@@ -48,26 +67,26 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 2rem;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #2e7d32;
+    color: #2c3e50;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #1b5e20;
+    color: #e74c3c;
 }
 
-/* Hero section */
+/* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80');
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,215 +95,176 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    max-width: 800px;
     color: white;
+    max-width: 800px;
 }
 
 .hero-content h2 {
     font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Buttons */
 .btn {
     display: inline-block;
-    background-color: #4caf50;
+    background: #e74c3c;
     color: white;
-    padding: 12px 30px;
-    border-radius: 30px;
+    padding: 1rem 2rem;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.3s;
-    border: 2px solid #4caf50;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: transparent;
-    color: #4caf50;
+    background: #c0392b;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Section styles */
-section {
-    padding: 80px 0;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    color: #2e7d32;
-    font-size: 2.5rem;
-}
-
-/* About section */
-.about {
+/* Products Section */
+.products {
+    padding: 5rem 0;
     background-color: #fff;
 }
 
-.about p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
+.products h2 {
     text-align: center;
-}
-
-/* Products section */
-.products {
-    background-color: #f1f8e9;
+    margin-bottom: 3rem;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .product-card {
-    background-color: #fff;
+    background: #f8f5f0;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .product-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .product-card img {
     width: 100%;
     height: 250px;
     object-fit: cover;
+    display: block;
 }
 
 .product-card h3 {
-    padding: 20px 15px 10px;
-    font-size: 1.4rem;
-    color: #2e7d32;
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.3rem;
 }
 
 .product-card p {
-    padding: 0 15px 10px;
-    color: #555;
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .price {
-    padding: 0 15px 20px;
-    font-size: 1.3rem;
     font-weight: bold;
-    color: #2e7d32;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.5rem 1rem 1rem;
 }
 
-/* Gallery section */
-.gallery {
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background-color: #f8f5f0;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 0;
     background-color: #fff;
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* Contact section */
-.contact {
-    background-color: #f1f8e9;
-}
-
-.contact-info {
+.contact h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 2rem;
     font-size: 1.1rem;
 }
 
-.contact-form {
+form {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
 }
 
-.contact-form h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #2e7d32;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
+form input,
+form textarea {
+    padding: 1rem;
+    margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-family: 'Georgia', serif;
     font-size: 1rem;
 }
 
-.contact-form textarea {
+form textarea {
     height: 150px;
     resize: vertical;
 }
 
-.contact-form button {
-    width: 100%;
-    padding: 15px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #2e7d32;
-}
-
 /* Footer */
 footer {
-    background-color: #2e7d32;
+    background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 2rem 0;
+    margin-top: 3rem;
 }
 
-/* Responsive design */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .header-container {
+    header div {
         flex-direction: column;
         text-align: center;
     }
 
     nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        margin-top: 1rem;
     }
 
     nav ul li {
-        margin: 5px 10px;
+        margin: 0 1rem;
     }
 
     .hero-content h2 {
@@ -292,36 +272,37 @@ footer {
     }
 
     .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    section h2 {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     .product-grid {
         grid-template-columns: 1fr;
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
     }
 }
 
 @media (max-width: 480px) {
+    nav ul li {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+
     .hero-content h2 {
         font-size: 1.5rem;
     }
 
     .hero-content p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
-    section {
-        padding: 50px 0;
-    }
-
-    .about p {
-        font-size: 1rem;
+    .btn {
+        padding: 0.8rem 1.5rem;
     }
 }
