@@ -1,0 +1,36 @@
+# Jekyll configuration for Handmade Wreath Business
+
+title: Handmade Wreaths by Mom's Business
+email: info@momswreaths.com
+description: Beautiful handmade wreaths for all seasons and occasions
+
+# Site settings
+baseurl: ""
+url: "https://momswreaths.com"
+
+# Build settings
+markdown: kramdown
+theme: minima
+
+# Collections
+collections:
+  wreaths:
+    output: true
+    permalink: /wreaths/:path/
+
+# Sass settings
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CNAME
+  - deploy.sh

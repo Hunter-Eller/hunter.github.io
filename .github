@@ -1,0 +1,10 @@
+# GitHub Pages Configuration
+
+This directory contains configuration files for hosting the website on GitHub Pages.
+
+For a GitHub Pages site, you typically need:
+1. An `index.html` file at the root
+2. A `_config.yml` file for Jekyll configuration (if using Jekyll)
+3. Or just static files if using plain HTML
+
+The site will be automatically built and deployed when you push to the main branch.
